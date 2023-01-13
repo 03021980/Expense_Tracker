@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-3.6.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/all.css" rel="stylesheet" />
+    <link href="@Url.Content("/Content/Main.css?version=2")" rel="stylesheet" />
+</head>
+
+<body class="bg-gradient-primary">
+    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertairy" style="background-color: white;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="text-shadow:1px 1px 2px red,0 0 1em grey,0 0 0.2em grey;">Expense Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/MonthBudget">Add Expense Limit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Category">Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Expense">Expense</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div>
+        @RenderBody()
+        
+    </div>
+</body>
+</html>

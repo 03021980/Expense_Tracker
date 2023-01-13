@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Expense_Tracking_SystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Category_Id" />
+    </Key>
+    <Property Name="Category_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category_Name" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Category_Expense_Limit" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Expense">
+    <Key>
+      <PropertyRef Name="Expense_Id" />
+    </Key>
+    <Property Name="Expense_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Expense_Title" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Expense_Description" Type="varchar" MaxLength="50" />
+    <Property Name="Expense_Amount" Type="int" Nullable="false" />
+    <Property Name="Expense_Date" Type="date" Nullable="false" />
+    <Property Name="Expense_Category_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Total_Expense">
+    <Key>
+      <PropertyRef Name="Total_Expense_Id" />
+    </Key>
+    <Property Name="Total_Expense_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Month" Type="int" Nullable="false" />
+    <Property Name="Year" Type="int" Nullable="false" />
+    <Property Name="Month_Expense_Limit" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Expense_Tracking_SystemModelStoreContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Expense" EntityType="Self.Expense" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Total_Expense" EntityType="Self.Total_Expense" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

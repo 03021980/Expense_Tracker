@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Expense_Tracker.Model.Category>
+
+<!DOCTYPE html>
+@{
+    Layout = "~/Views/Shared/Basic_Common.cshtml";
+}
+@Html.Raw(TempData["InsertMessage"])
+@Html.Raw(TempData["UpdateMessage"]))
+<html>
+<body class="bg-gradient-primary">
+    <div class="container-fluid">
+
+        <div class="card shadow mb-4">
+            <div class="card-body" style="background-color:#B4C9C7">
+                <div>
+                    <h1 class="h3 mb-2 text-gray-800" style="text-shadow:1px 1px 2px red,0 0 1em grey,0 0 0.2em grey;"><b>Category List</b></h1>
+                    <a href="/Category" style="padding-left:85em;">Add Category</a>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Category_Title</th>
+                                <th>Category_Amount</th>
+                                <th>Month</th>
+                                <th>Year</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.CategoryName</td>
+                                        <td>@item.CategoryExpenseLimit</td>
+                                        <td>@item.CategoryMonth</td>
+                                        <td>@item.CategoryYear</td>
+                                        <td>
+                                            <a href="/CategoryEdit?id=@item.CategoryID"><i class="fa-solid fa-pen"></i></a>
+                                            &emsp;
+                                            <a href="/DelCategory?id=@item.CategoryID"><i class="fa-solid fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

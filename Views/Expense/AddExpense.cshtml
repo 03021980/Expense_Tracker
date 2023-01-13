@@ -1,0 +1,68 @@
+﻿@model Expense_Tracker.Model.Expense
+
+@{
+    Layout = "~/Views/Shared/Basic_Common.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<body class="bg-gradient-primary">
+    @using (Html.BeginForm("", "AddExpense", FormMethod.Post))
+    {
+        <div class="container">
+            <div class="box .o-hidden border-0 .shadow-lg col-lg-10" style="margin:100px 10px 0px 115px;">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <img src="~/Content/Images/Add_Expense.png" height="580" width="675" style="background-color:#B4C9C7" />
+                        <!---
+                            <img src="~/Content/Images/alexander-mils-lCPhGxs7pww-unsplash.jpg" height="400px" width="600px" style="overflow:hidden" /
+                        -->
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="" style="margin:0px 40px 30px 70px;">
+                            <div class="text-center">
+                                <h1 class="h1 text-gray-500" style="text-shadow:1px 1px 2px red,0 0 1em grey,0 0 0.2em grey;"><b>Add New Expense</b></h1>
+                            </div>
+                            <div style="padding-left:220px;">
+                                <a href="/ExpenseView">View Expense</a>
+                            </div>
+                            <form class="user">
+                                <div>
+                                    <input type="text" class="form-control form-control-user" placeholder="Expense_Title" name="ExpenseTitle">
+                                </div>
+                                <br />
+                                <div>
+                                    <input type="text" class="form-control form-control-user" placeholder="Expense_Description" name="ExpenseDescription">
+                                </div>
+                                <br />
+                                <div>
+                                    <input type="number" class="form-control form-control-user" placeholder="Expense_Amount" name="ExpenseAmount">
+                                </div>
+                                <br />
+                                <div style="padding-left:220px;">
+                                    <a href="/Category">Add Category</a>
+                                </div>
+                                <div>
+                                    <select class="form-control form-control-user" name="ExpenseCategory">
+                                        <option>Choose Category</option>
+                                        <option>Food</option>
+                                        <option>Home</option>
+                                        <option>Electricity</option>
+                                        <option>Gas</option>
+                                        <option>Vehicle</option>
+                                        <option>Medicine</option>
+                                        <option>Education</option>
+                                    </select>
+                                    <!--<input type="" class="form-control form-control-user" placeholder="Expense_Category" name="ExpenseCategory">-->
+                                </div>
+                                <br />
+                                <br />
+                                <input type="submit" value="Add Expense" class="btn btn-primary btn-user btn-block" style="margin: 10px 30px 150px 90px;" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>

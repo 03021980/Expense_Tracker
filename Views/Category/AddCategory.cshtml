@@ -1,0 +1,107 @@
+﻿@model Expense_Tracker.Model.Category
+
+@{
+    Layout = "~/Views/Shared/Basic_Common.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="bg-gradient-primary">
+    @using (Html.BeginForm("", "AddCategory", FormMethod.Post))
+    {
+        <div class="container" style="margin: 100px 0px 0px 205px;">
+            <div class="box .o-hidden border-0 .shadow-lg col-lg-10">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <img src="~/Content/Images/Add_Category.png" height="550" width="675" style="background-color:#B4C9C7" />
+                        <!---
+                            <img src="~/Content/Images/alexander-mils-lCPhGxs7pww-unsplash.jpg" height="400px" width="600px" style="overflow:hidden" /
+                        -->
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="" style="margin:60px 50px 0px 65px;">
+                            
+                            <div class="text-center">
+                                <h2 class="h2 text-gray-500" style="text-shadow:1px 1px 2px red,0 0 1em grey,0 0 0.2em grey;"><b>Add New Category</b></h2>
+                            </div>
+                            <br />
+                            <div style="padding-left:220px;">
+                                <a href="/ViewCategory">View Category</a>
+                            </div>
+                            <form class="user">
+                                <!--
+        <div>
+        <input type="text" class="form-control form-control-user" placeholder="Category_Name" name="CategoryName">
+    </div>
+        -->
+                                <select class="form-control form-control-user" name="CategoryName">
+                                    <option>Choose Category</option>
+                                    <option>Food</option>
+                                    <option>Home</option>
+                                    <option>Electricity</option>
+                                    <option>Gas</option>
+                                    <option>Vehicle</option>
+                                    <option>Medicine</option>
+                                    <option>Education</option>
+                                </select>
+                                <br />
+                                <div>
+                                    <input type="number" class="form-control form-control-user" placeholder="Category_Expense_Limit" name="CategoryExpenseLimit">
+                                </div>
+                                <br />
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <select class="form-control form-control-user" name="CategoryMonth">
+                                            <option>Month</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                        </select>
+                                        <!-- <div class="col-sm-6 mb-3 mb-sm-0">
+            <input type="text" class="form-control form-control-user" id="Monthly_Month" placeholder="Month" name="Month">
+        </div>-->
+                                    </div>
+
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <select class="form-control form-control-user" name="CategoryYear">
+                                            <option>Year</option>
+                                            <option>2021</option>
+                                            <option>2022</option>
+                                            <option>2023</option>
+                                            <option>2024</option>
+                                            <option>2025</option>
+                                            <option>2026</option>
+                                            <option>2027</option>
+                                            <option>2028</option>
+                                            <option>2029</option>
+                                            <option>2030</option>
+                                            <option>2031</option>
+                                            <option>2032</option>
+                                            <option>2033</option>
+                                            <option>2034</option>
+                                            <option>2035</option>
+                                        </select>
+                                        <!-- <div class="col-sm-6 mb-3 mb-sm-0">
+            <input type="text" class="form-control form-control-user" id="Monthly_Month" placeholder="Month" name="Month">
+        </div>-->
+                                    </div>
+                                </div>
+                                <input type="submit" value="Add Category" class="btn btn-primary btn-user btn-block" style="margin: 10px 30px 150px 90px;" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿@model List<Expense_Tracker.Model.MonthlyBudget>
+
+@{
+    Layout = "~/Views/Shared/Basic_Common.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<body class="bg-gradient-primary">
+    <div class="container-fluid">
+
+        <div class="card shadow mb-4">
+            <div class="card-body" style="background-color:#B4C9C7">
+                <div>
+                    <h1 class="h3 mb-2 text-gray-800" style="text-shadow:1px 1px 2px red,0 0 1em grey,0 0 0.2em grey;"><b>Budget List</b></h1>
+                    <a class="link-primary" href="/MonthBudget" style="padding-left:75em;">Add Month Budget</a>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Month</th>
+                                <th>Year</th>
+                                <th>Amount</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Month</td>
+                                        <td>@item.Year</td>
+                                        <td>@item.MonthExpenseLimit</td>
+
+                                        <td>
+                                            <a href="/BudgetEdit?id=@item.ID"><i class="fa-solid fa-pen"></i></a>
+                                            &emsp;
+                                            <a href="/DelLimit?id=@item.ID"><i class="fa-solid fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
